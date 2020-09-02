@@ -17,19 +17,19 @@
 <body>
 	<button id="toggle">Включить</button>
 	</br>
-	<img id="bulb" src="img/bulb-on.png" hidden>
+	<img id="bulb" src="img/bulb-off.png">
 	<script>
-		const bulbToggle = document.getElementById("toggle");
-		bulbToggle.addEventListener("click", () => {
-			const bulb = document.getElementById("bulb");
-			if (bulb.hidden) {
-				bulb.hidden = false;
-				bulbToggle.innerText = "Выключить";
-			} else {
-				bulb.hidden = true;
-				bulbToggle.innerText = "Включить";
-			}
-		})
+		const bulbToggle = document.getElementById("toggle")
+    bulbToggle.addEventListener("click",() => { 
+        const bulb = document.getElementById("bulb");
+        if (bulbToggle.innerText=="Включить") {
+            bulbToggle.innerText="Выключить";
+            bulb.src="img/bulb-on.png";
+        } else {
+            bulbToggle.innerText="Включить";
+            bulb.src="img/bulb-off.png";
+        }
+    });
 	</script>
 </body>
 </html>
