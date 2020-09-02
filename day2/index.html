@@ -12,6 +12,10 @@
 		#bulb {
 			width: 100px;
 		}
+		#bulb-on {
+			width: 100px;
+			opacity: 0.5;
+		}
 	</style>
 </head>
 <body>
@@ -19,7 +23,7 @@
 	</br>
 	<img id="bulb" src="img/bulb-off.png">
 	<script>
-		const bulbToggle = document.getElementById("toggle")
+		const bulbToggle = document.getElementById("toggle");
     bulbToggle.addEventListener("click",() => { 
         const bulb = document.getElementById("bulb");
         if (bulbToggle.innerText=="Включить") {
@@ -30,6 +34,17 @@
             bulb.src="img/bulb-off.png";
         }
     });
+	</script>
+	<br>
+	<input id="dimmer" type="range">
+	<br>
+	<img id= "bulb-on" src="img/bulb-on.png">
+	<script>
+	const bulbDimmer = document.getElementById("dimmer");
+	const bulbMask = document.getElementById("bulb-on");
+	bulbDimmer.addEventListener("change", () => {
+		bulbMask.style.opacity = bulbDimmer.value/100;
+	})
 	</script>
 </body>
 </html>
