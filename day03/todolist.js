@@ -9,7 +9,5 @@ function changeTodoTitle(todoId, newTitle) {
     arr[todoId].title = newTitle;
 }
 function changeTodoStatus(todoId, isComplete) {
-    if (isComplete) {
-        arr[todoId].status = "checked";
-    } else { arr[todoId].status = "unchecked"; }
+    arr[todoId].status = isComplete;
 }
